@@ -1,0 +1,22 @@
+{
+  "name": "random_number_generation_app_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon index.ts",
+    "start": "node index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "volta": {
+    "node": "16.13.1",
+    "npm": "8.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
