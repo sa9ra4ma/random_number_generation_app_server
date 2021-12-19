@@ -10,7 +10,7 @@ const RANDOM_NUMBERS_FILE = './randomNumber.csv';
 router.get('/', async (req, res) => {
     try {
         const fileValue = fs.readFileSync(RANDOM_NUMBERS_FILE, 'utf-8');
-        console.log(fileValue)
+        const randomNumberList = fileValue.split(',');
         res.json(randomNumberList);
     } catch (e) {
         console.error(e);
@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
         }
         const randomNumberStr = randomNumberList.join(',');
         fs.writeFileSync(RANDOM_NUMBERS_FILE, randomNumberStr, 'utf-8');
-        res.status(200).send();
+        res.status(200).json(randomNumberList);
     } catch (e) {
         console.error(e);
         res.status(500).send();
