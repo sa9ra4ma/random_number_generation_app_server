@@ -29,6 +29,7 @@ router.post('/random', async (req, res) => {
         const themeList = fileValue.split('\r\n');
         const randomNumber = Math.floor( Math.random() * themeList.length );
         const theme = themeList[randomNumber];
+        fs.writeFileSync(RANDOM_THEME_FILE, theme, 'utf-8');
         const themeObj = {
             theme
         };
